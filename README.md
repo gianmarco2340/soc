@@ -14,20 +14,21 @@ Este proyecto implementa un SOC (Security Operations Center) doméstico completo
 - Visualiza todo en dashboards de Grafana y Wazuh
 
 ## Arquitectura
+```
 Internet
-↓
+    ↓
 Cowrie (honeypot SSH) — VPS con IP pública
-↓ WireGuard (cifrado)
+    ↓ WireGuard (cifrado)
 n8n — orquestación de workflows
-↓
+    ↓
 Groq API (Llama 3.3 70B) — análisis de ataques
-↓
+    ↓
 Telegram — notificación inmediata
 Reportes .md — guardados en servidor local
-↓
+    ↓
 pgvector + Ollama (Mistral) — RAG consultable
 Grafana + Wazuh — dashboards y SIEM
-
+```
 ## Stack tecnológico
 
 | Componente | Tecnología |
@@ -46,6 +47,8 @@ Grafana + Wazuh — dashboards y SIEM
 | VPN | WireGuard |
 
 ## Estructura del proyecto
+
+```
 soc-honeypot/
 ├── honeypot/
 │   ├── docker-compose.yml       # Cowrie en Docker aislado
@@ -61,11 +64,12 @@ soc-honeypot/
 │   ├── honeypot-receiver.service
 │   ├── honeypot-shipper.service
 │   ├── rag-watcher.service
-│   └── cowrie-shipper.service   # Para el VPS
+│   └── cowrie-shipper.service
 ├── grafana/
-│   └── dashboard.json           # Dashboard SOC exportado
-├── .env.example                 # Variables de entorno (sin secretos)
+│   └── dashboard.json
+├── .env.example
 └── README.md
+```
 
 ## Instalación rápida
 
