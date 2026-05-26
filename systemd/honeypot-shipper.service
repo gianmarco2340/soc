@@ -1,0 +1,14 @@
+[Unit]
+Description=Honeypot log shipper
+After=network.target docker.service
+
+[Service]
+Type=simple
+User=hyper
+WorkingDirectory=/home/hyper/honeypot
+ExecStart=/home/hyper/honeypot/venv/bin/python3 /home/hyper/honeypot/log-shipper.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

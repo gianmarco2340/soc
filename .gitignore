@@ -1,0 +1,9 @@
+.env
+*.json
+reportes/
+cowrie/logs/
+cowrie/downloads/
+venv/
+__pycache__/
+*.pyc
+processed_sessions.json

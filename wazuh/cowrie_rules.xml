@@ -1,0 +1,54 @@
+<group name="cowrie,honeypot,">
+
+  <rule id="100001" level="6">
+    <decoded_as>json</decoded_as>
+    <field name="eventid">cowrie.session.connect</field>
+    <description>Cowrie: Nueva conexión SSH al honeypot desde $(src_ip)</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+  </rule>
+
+  <rule id="100002" level="8">
+    <decoded_as>json</decoded_as>
+    <field name="eventid">cowrie.login.failed</field>
+    <description>Cowrie: Intento de login fallido [$(username)/$(password)] desde $(src_ip)</description>
+    <mitre>
+      <id>T1110.001</id>
+    </mitre>
+  </rule>
+
+  <rule id="100003" level="12">
+    <decoded_as>json</decoded_as>
+    <field name="eventid">cowrie.login.success</field>
+    <description>Cowrie: LOGIN EXITOSO al honeypot [$(username)/$(password)] desde $(src_ip)</description>
+    <mitre>
+      <id>T1078</id>
+    </mitre>
+  </rule>
+
+  <rule id="100004" level="10">
+    <decoded_as>json</decoded_as>
+    <field name="eventid">cowrie.command.input</field>
+    <description>Cowrie: Comando ejecutado en honeypot: $(input)</description>
+    <mitre>
+      <id>T1059</id>
+    </mitre>
+  </rule>
+
+  <rule id="100005" level="14">
+    <decoded_as>json</decoded_as>
+    <field name="eventid">cowrie.session.file_download</field>
+    <description>Cowrie: Descarga de archivo en honeypot desde $(src_ip)</description>
+    <mitre>
+      <id>T1105</id>
+    </mitre>
+  </rule>
+
+  <rule id="100006" level="6">
+    <decoded_as>json</decoded_as>
+    <field name="eventid">cowrie.session.closed</field>
+    <description>Cowrie: Sesión cerrada - duración $(duration)s desde $(src_ip)</description>
+  </rule>
+
+</group>

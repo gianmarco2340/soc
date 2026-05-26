@@ -1,0 +1,21 @@
+services:
+  cowrie:
+    image: cowrie/cowrie:latest
+    container_name: cowrie
+    restart: unless-stopped
+    ports:
+      - "2223:2222"
+      - "2323:2223"
+    volumes:
+      - ./cowrie/logs:/cowrie/cowrie-git/var/log/cowrie
+      - ./cowrie/downloads:/cowrie/cowrie-git/var/lib/cowrie/downloads
+    networks:
+      - honeypot-net
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 512m
+    cpus: 0.5
+
+networks:
+  honeypot-net:
+    external: true

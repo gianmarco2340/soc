@@ -1,0 +1,14 @@
+[Unit]
+Description=RAG Watcher - Auto ingesta de reportes honeypot
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=hyper
+WorkingDirectory=/home/hyper/soc-rag
+ExecStart=/home/hyper/soc-rag/venv/bin/python3 /home/hyper/soc-rag/rag-watcher.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
