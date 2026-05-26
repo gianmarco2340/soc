@@ -1,4 +1,4 @@
-# 🛡️OC Casero con Honeypot, IA y RAG
+# SOC Casero con Honeypot, IA y RAG
 
 Sistema de detección y análisis de amenazas construido desde cero para aprendizaje de ciberseguridad real.
 
@@ -13,7 +13,7 @@ Este proyecto implementa un SOC (Security Operations Center) doméstico completo
 - Notifica en tiempo real por Telegram
 - Visualiza todo en dashboards de Grafana y Wazuh
 
-## rquitectura
+## Arquitectura
 Internet
 ↓
 Cowrie (honeypot SSH) — VPS con IP pública
@@ -168,7 +168,7 @@ python3 query.py "¿cuál fue el ataque más peligroso?"
 
 MIT License — libre para uso educativo y personal.
 
-## isclaimer
+## Disclaimer
 
 Este proyecto es para **fines educativos**. Úsalo responsablemente.
 El honeypot captura ataques reales — asegúrate de tener el aislamiento
